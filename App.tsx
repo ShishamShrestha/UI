@@ -35,8 +35,8 @@ function App() {
   return (
     <View >
       <Header/>
-      <View style={{height:30,width:500,marginTop:5,margin:10,backgroundColor:'#fff'}}>
-        <SBar/>
+      <View style={{height:30,width:500,marginTop:5,margin:10}}>
+        {/* <SBar/> */}
       </View>
       <HomeScreen/>
       
