@@ -1,8 +1,9 @@
+
 // import 'react-native-gesture-handler'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Icon } from 'react-native-vector-icons/MaterialIcons'
+import  Icon  from 'react-native-vector-icons/MaterialIcons'
 // import NavigationContainer from '@react-navigation/native/lib/typescript/src/NavigationContainer'
-import { Icon2 } from 'react-native-vector-icons/Entypo'
+import  Icon2  from 'react-native-vector-icons/Entypo'
 import { View, Text } from 'react-native'
 import React from 'react'
 import HomeScreen from '../screens/HomeScreen'
@@ -46,5 +47,7 @@ const BottomNav = () => {
                 
         </Tab.Navigator>);
 };
+
+
 
 export default BottomNav

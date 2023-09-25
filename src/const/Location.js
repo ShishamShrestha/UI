@@ -1,3 +1,4 @@
+
 import { View, Text,Image, SafeAreaView, FlatList } from 'react-native'
 import React from 'react'
 const Location=()=>{
@@ -56,4 +57,5 @@ return(
 </View>
 );
 }
+
 export default {Location};

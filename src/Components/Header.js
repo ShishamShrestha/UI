@@ -1,3 +1,4 @@
+
 import { StyleSheet, Text, View,Image,ImageBackground } from 'react-native'
 import React from 'react'
 import IconsAwesoome from 'react-native-vector-icons/FontAwesome'
@@ -24,5 +25,6 @@ const Header = () => {
 }
 
 export default Header;
+
 
 const styles = StyleSheet.create({})
