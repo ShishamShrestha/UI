@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View,Image,ImageBackground } from 'react-native'
 import React from 'react'
 import IconsAwesoome from 'react-native-vector-icons/FontAwesome'
-
+import Location from '../const/Location'
 //  const logoImg = require("../../src/assets/drop.jpg");
 const Header = () => {
   return (
