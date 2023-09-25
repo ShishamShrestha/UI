@@ -105,6 +105,7 @@ const HomeScreen = () => {
                 width: 200,
                 marginVertical: 20,
                 borderRadius: 20,
+                top:-4
               
               }}
             />
