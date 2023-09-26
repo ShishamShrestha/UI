@@ -50,4 +50,4 @@ const BottomNav = () => {
 
 
 
-export default BottomNav
+export default {BottomNav};

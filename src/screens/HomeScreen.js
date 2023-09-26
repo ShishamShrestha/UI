@@ -1,7 +1,6 @@
 
-import { StyleSheet, Text, View, FlatList, Image,ScrollView , TextInput, SafeAreaView, useState, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, FlatList,  Image,ScrollView , TextInput, SafeAreaView, useState, TouchableOpacity } from 'react-native'
 import React from 'react'
-// import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/Ionicons'
 // import  ScrollView  from 'react-native-gesture-handler'
 // import Location from '../const/Location'
@@ -81,7 +80,8 @@ const HomeScreen = () => {
                 width: 200,
                 marginHorizontal: 20,
                 borderRadius: 20,
-                top:-5
+                top:-5,
+                padding:10
               
               }}
             /><Text style={styles.list}>{item.name}</Text>
@@ -98,7 +98,9 @@ const HomeScreen = () => {
       </View>
       <TouchableOpacity>
         
-      <ScrollView > 
+      <FlatList data={data}
+          
+          renderItem={({ item }) => <View > 
             <Image
               source={require('../Assets/Pokhara_at_dawn.jpg')}
               style={{
@@ -110,8 +112,9 @@ const HomeScreen = () => {
               
               }}
             />
-             
-       </ScrollView>  
+             </View>
+       }
+       />
           </TouchableOpacity>
          
         
@@ -161,7 +164,11 @@ const styles = StyleSheet.create({
     // fontWeight:'bold'
   },
   list: {
+    width:250,
     fontSize: 19,
     paddingHorizontal: 35,
+    top:-60,
+    fontWeight:'bold',
+    color:'#000'
   }
 })
