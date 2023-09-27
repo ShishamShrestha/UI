@@ -53,7 +53,7 @@ const HomeScreen = () => {
   //   // ></ScrollView>
   // }
   return (
-    <SafeAreaView >
+    <ScrollView>
       <View style={styles.inputContainer}><Icon name='search' />
         <TextInput
           style={{ color: '#000' }}
@@ -74,7 +74,7 @@ const HomeScreen = () => {
           horizontal
           renderItem={({ item }) => <View >
             <Image
-              source={require('../Assets/MtEverest.jpg')}
+              source={item.image}
               style={{
                 height: 200,
                 width: 200,
@@ -98,9 +98,7 @@ const HomeScreen = () => {
       </View>
       <TouchableOpacity>
         
-      <FlatList data={data}
-          
-          renderItem={({ item }) => <View > 
+       <View > 
             <Image
               source={require('../Assets/Pokhara_at_dawn.jpg')}
               style={{
@@ -113,12 +111,11 @@ const HomeScreen = () => {
               }}
             />
              </View>
-       }
-       />
+      
           </TouchableOpacity>
          
-        
-    </SafeAreaView>);
+        </ScrollView>
+    );
 
 }
 
