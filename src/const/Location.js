@@ -36,6 +36,11 @@ const data  = [
             image:require('../Assets/Pokhara_at_dawn.jpg')
         }
     ];
+    const arylist=()=>{
+        data.map=((loc)=>{
+          <Text style={{fontSize:20}}>{loc}</Text>
+        })
+        }
 return(
 <View>
     
@@ -54,8 +59,9 @@ return(
     </View>}
     style={{top:100}}
     /> */}
+    {arylist()}
 </View>
 );
 }
 
-export default {Location};
+export default Location;
