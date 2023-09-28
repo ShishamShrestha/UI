@@ -16,6 +16,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button
 } from 'react-native';
 
 import {
@@ -31,15 +32,20 @@ import SBar from './src/Components/SBar';
 import Body from './src/Components/Body';
 import HomeScreen from './src/screens/HomeScreen';
 import Location from './src/const/Location';
+import Details from './src/const/Details';
 
 function App() {
+const detail=()=>{
+  <Details/>
+}
   return (
     <View >
-      <Header/>
-      
+      {/* <Header/>
+      <Button title='hello' onPress={detail}></Button>
       <HomeScreen/>
       
-      <BottomNav/>
+      <BottomNav/> */}
+      <Details/>
       
     </View>
     
