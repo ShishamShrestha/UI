@@ -1,10 +1,14 @@
 
-import { StyleSheet, Text, View, FlatList, map, Image, ScrollView, TextInput, SafeAreaView, useState, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, FlatList,onPress, map, Image, ScrollView, TextInput, SafeAreaView, useState, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
+import  Navigation  from '@react-navigation/native'
 import StarRating from 'react-native-star-rating-widget'
+import Details from '../const/Details'
+
 // import  ScrollView  from 'react-native-gesture-handler'
 // import Location from '../const/Location'
+
 const HomeScreen = () => {
   const data = [
     {
@@ -48,6 +52,10 @@ const HomeScreen = () => {
       <Text style={{ fontSize: 20 }}>{loc}</Text>
     })
   }
+
+  const img = item=>{
+    Navigation.navigate(Details,{...item})
+  }
   const details=()=>{
     console.warn("hello");
   }
@@ -83,6 +91,7 @@ const HomeScreen = () => {
                 alignItems: 'center',
                 // top:-5,
                 // padding:10
+                
               }}
             /><Text style={styles.list}>{item.name}</Text>
             <Text style={styles.list2}><Icon name='location-sharp'

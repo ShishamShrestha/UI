@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView,FlatList } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView,FlatList, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import StarRating from 'react-native-star-rating-widget'
 import ReadMore from '@fawazahmed/react-native-read-more'
@@ -45,7 +45,7 @@ const Details = () => {
         <ScrollView>
             <View style={{ backgroundColor: '#EEEDED' }}>
                 <View style={{
-                    height: 1660,
+                    height: 1000,
                     width: 420,
                     borderRadius: 55,
                     backgroundColor: '#fff'
@@ -53,7 +53,7 @@ const Details = () => {
                     <View>
                         <Image source={require('../Assets/Chitwan.png')}
                             style={{
-                                height: 450,
+                                height: 350,
                                 width: 300,
                                 marginHorizontal: 54,
                                 borderRadius: 35,
@@ -128,7 +128,11 @@ const Details = () => {
           }
             />
             </View>
-            
+            <View>
+                <Text style={{
+
+                }}>$200<Text>/Person</Text><Button title='Continue' style={{}} /></Text>
+            </View>
                 </View>
             </View>
         </ScrollView>

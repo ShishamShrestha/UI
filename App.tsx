@@ -40,12 +40,12 @@ const detail=()=>{
 }
   return (
     <View >
-      {/* <Header/>
-      <Button title='hello' onPress={detail}></Button>
+      <Header/>
+      {/* <Button title='hello' onPress={detail}></Button> */}
       <HomeScreen/>
       
-      <BottomNav/> */}
-      <Details/>
+      <BottomNav/>
+      {/* <Details/> */}
       
     </View>
     
