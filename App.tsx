@@ -1,4 +1,3 @@
-
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -16,13 +15,12 @@ import {
   Text,
   useColorScheme,
   View,
-  Button
+  Button,
 } from 'react-native';
 
 import {
   Colors,
   DebugInstructions,
-  
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
@@ -33,23 +31,13 @@ import Body from './src/Components/Body';
 import HomeScreen from './src/screens/HomeScreen';
 import Location from './src/const/Location';
 import Details from './src/const/Details';
+import RootStack from './src/navigation/RootStack';
 
 function App() {
-const detail=()=>{
-  <Details/>
-}
-  return (
-    <View >
-      <Header/>
-      {/* <Button title='hello' onPress={detail}></Button> */}
-      <HomeScreen/>
-      
-      <BottomNav/>
-      {/* <Details/> */}
-      
-    </View>
-    
-  );
+  const detail = () => {
+    <Details />;
+  };
+  return <RootStack />;
 }
 
 // const Home= () => {
@@ -61,23 +49,26 @@ const detail=()=>{
 //   }
 const styles = StyleSheet.create({
   Container: {
-    height:500,width:500,borderCurve:40,borderRadius:100
+    height: 500,
+    width: 500,
+    borderCurve: 40,
+    borderRadius: 100,
   },
-  text:{
-    fontSize:25,
-    fontWeight:'bold',
-    top:35,
-    left:10,
-    paddingTop:10,
-    color:'#000'
+  text: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    top: 35,
+    left: 10,
+    paddingTop: 10,
+    color: '#000',
   },
-  text2:{
-    fontSize:18,
-    top:26,
-    paddingVertical:-20,
-    left:80,
-    paddingLeft:240,
-  }
+  text2: {
+    fontSize: 18,
+    top: 26,
+    paddingVertical: -20,
+    left: 80,
+    paddingLeft: 240,
+  },
 });
 
 export default App;
