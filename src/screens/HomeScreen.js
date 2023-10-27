@@ -1,11 +1,23 @@
-
-import { StyleSheet, Text, View, FlatList, onPress, map, Image, ScrollView, TextInput, SafeAreaView, useState, TouchableOpacity } from 'react-native'
-import React from 'react'
-import Icon from 'react-native-vector-icons/Ionicons'
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  onPress,
+  map,
+  Image,
+  ScrollView,
+  TextInput,
+  SafeAreaView,
+  useState,
+  TouchableOpacity,
+} from 'react-native';
+import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
-import StarRating from 'react-native-star-rating-widget'
-import Details from '../const/Details'
-import Header from '../Components/Header'
+import StarRating from 'react-native-star-rating-widget';
+import Details from '../const/Details';
+import Header from '../Components/Header';
 import {ROUTES} from '../const/ROUTES';
 
 // import  ScrollView  from 'react-native-gesture-handler'
@@ -17,86 +29,92 @@ const HomeScreen = () => {
   const data = [
     {
       id: 1,
-      name: "Chitwan",
+      name: 'Chitwan',
       address: 'Chitwan,Nepal',
-      Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      Description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       Price: '$300',
       image: require('../Assets/Chitwan.png'),
       stars: 4.0,
-      
-
     },
     {
       id: 2,
-      name: "Sagarmatha NP",
+      name: 'Sagarmatha NP',
       address: 'Sagarmatha,Nepal',
-      Description: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      Description:
+        '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       Price: '$300',
       image: require('../Assets/MtEverest.jpg'),
       stars: 4.2,
     },
     {
       id: 3,
-      name: "Pashupatinath Temple",
+      name: 'Pashupatinath Temple',
       address: 'Ktm,Nepal',
-      Description: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      Description:
+        '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       Price: '$300',
       image: require('../Assets/PashupatinathTemple.jpg'),
       stars: 4.8,
-      size:16
+      size: 16,
     },
     {
       id: 4,
-      name: "Pokhara",
+      name: 'Pokhara',
       address: 'Pokhara,Nepal',
-      Description: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      Description:
+        '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       Price: '$300',
       image: require('../Assets/Pokhara_at_dawn.jpg'),
       stars: 5.0,
-      
-    }
-  ]
+    },
+  ];
   const [rating, setRating] = React.useState(0);
 
-  const stars =()=>{
+  const stars = () => {
     <StarRating
-              rating={4.5}
-              onChange={setRating}
-              //  color='#000'
-              starSize={15}
-              width={20}
-              style={styles.star}/>
-  }
+      rating={4.5}
+      onChange={setRating}
+      //  color='#000'
+      starSize={15}
+      width={20}
+      style={styles.star}
+    />;
+  };
 
   const onPressImage = value => {
     navigation.navigate(ROUTES.DETAIL, value);
   };
   return (
-    <ScrollView >
-      <Header/>
-      <View style={styles.inputContainer}><Icon name='search' />
+    <ScrollView>
+      <Header />
+      <View style={styles.inputContainer}>
+        <Icon name="search" />
         <TextInput
-          style={{ color: '#000' }}
-          placeholder='Search for Location....' />
-
-      </View><Text style={styles.text}>Special for You</Text>
+          style={{color: '#000'}}
+          placeholder="Search for Location...."
+        />
+      </View>
+      <Text style={styles.text}>Special for You</Text>
       <Text style={styles.text2}>Explore</Text>
       <View
         style={{
           marginTop: 40,
           // flexDirection: 'row',
           paddingHorizontal: 20,
-        }}
-      >
+        }}>
         {/* <Location/> */}
         <FlatList
           data={data}
           showsHorizontalScrollIndicator={false}
           horizontal
           renderItem={({item}) => (
+
             <TouchableOpacity
             onPress={onPressImage}
             style={{backgroundColor: '#EEEDED', borderRadius: 30}}>
+=======
+
             <View
               style={{
                 elevation: 10,
@@ -127,7 +145,9 @@ const HomeScreen = () => {
                 style={styles.star}
               />
             </View>
+
             </TouchableOpacity>
+
           )}
         />
       </View>
@@ -199,15 +219,15 @@ const HomeScreen = () => {
       />
     </ScrollView>
   );
-}
-export default HomeScreen
+};
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   header: {
     marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   text: {
     fontSize: 25,
@@ -249,7 +269,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 45,
     margin: 10,
-    elevation: 10
+    elevation: 10,
   },
   list: {
     width: 280,
@@ -271,13 +291,13 @@ const styles = StyleSheet.create({
     // fontWeight:'100',
     // backgroundColor:'#000',
     marginTop: -84,
-    marginHorizontal: 25
+    marginHorizontal: 25,
   },
   pop: {
     height: 150,
     width: 350,
     borderRadius: 15,
     backgroundColor: '#999',
-    marginHorizontal: 25
-  }
-})
+    marginHorizontal: 25,
+  },
+});
