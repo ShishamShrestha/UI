@@ -3,11 +3,11 @@ import React from 'react'
 
 const Practice = () => {
   return (
-    <View>
+    <View style={{backgroundColor:'red'}}>
       <View style={styles.first} ><Text>Hlelo</Text></View>
-      <View/>
+      {/* <View/>
       <View/> 
-      <View/>
+      <View/> */}
     </View>
   )
 }
@@ -21,6 +21,5 @@ const styles = StyleSheet.create({
         borderRadius:20,
         backgroundColor:'red',
         alignContent:'space-between'
-
     }
 })

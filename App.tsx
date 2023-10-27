@@ -32,12 +32,13 @@ import HomeScreen from './src/screens/HomeScreen';
 import Location from './src/const/Location';
 import Details from './src/const/Details';
 import RootStack from './src/navigation/RootStack';
-
+// import 'react-native-gesture-handler';
 function App() {
   const detail = () => {
     <Details />;
   };
   return <RootStack />;
+ 
 }
 
 // const Home= () => {

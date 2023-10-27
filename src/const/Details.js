@@ -131,7 +131,7 @@ const Details = () => {
             <View>
                 <Text style={{
 
-                }}>$200<Text>/Person</Text><Button title='Continue' style={{}} /></Text>
+                }}>$200<Text>/Person</Text><Button title='Continue' style={styles.continue} /></Text>
             </View>
                 </View>
             </View>
@@ -145,5 +145,8 @@ const styles = StyleSheet.create({
     star: {
         marginTop: -110,
         marginHorizontal: 75
+    },
+    continue:{
+        marginHorizontal:'200'
     }
 })

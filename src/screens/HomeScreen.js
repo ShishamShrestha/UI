@@ -89,84 +89,114 @@ const HomeScreen = () => {
         }}
       >
         {/* <Location/> */}
-        <FlatList data={data}
-        showsHorizontalScrollIndicator={false}
+        <FlatList
+          data={data}
+          showsHorizontalScrollIndicator={false}
           horizontal
-          
-          renderItem={({ item }) => <View style={{elevation:10}} >
-            <Image
-              source={item.image}
+          renderItem={({item}) => (
+            <TouchableOpacity
+            onPress={onPressImage}
+            style={{backgroundColor: '#EEEDED', borderRadius: 30}}>
+            <View
               style={{
+                elevation: 10,
                 height: 240,
                 width: 220,
                 marginHorizontal: 20,
-                borderRadius: 20,
-                alignItems: 'center',
-              }}
-            /><Text style={styles.list} size={item.size}>{item.name}</Text>
-            <Text style={styles.list2}><Icon name='location-sharp'
-            size={20}/>{item.address}</Text>
-            <StarRating 
-            rating={item.stars}
-            starSize={15}
-            width={20}
-            style={styles.star}
-            />
-          </View>
-
-          }
+              }}>
+              <Image
+                source={item.image}
+                style={{
+                  height: 240,
+                  width: 220,
+                  borderRadius: 20,
+                  alignItems: 'center',
+                }}
+              />
+              <Text style={styles.list} size={item.size}>
+                {item.name}
+              </Text>
+              <Text style={styles.list2}>
+                <Icon name="location-sharp" size={20} />
+                {item.address}
+              </Text>
+              <StarRating
+                rating={item.stars}
+                starSize={15}
+                width={20}
+                style={styles.star}
+              />
+            </View>
+            </TouchableOpacity>
+          )}
         />
       </View>
       <View>
         <Text style={styles.text3}>Popular Places</Text>
         <Text style={styles.text4}>Explore</Text>
       </View>
-      <TouchableOpacity style={{ backgroundColor: '#EEEDED', borderRadius: 30 }}>
-        <FlatList
-          data={data}
-          
-          
-          renderItem={({ item }) => <View style={{
-            height: 150,
-            width: 350,
-            borderRadius: 35,
-            backgroundColor: '#fff',
-            marginHorizontal: 25,
-            marginVertical:20,
-            elevation: 10
-          }} >
-            <Image
-              source={item.image}
+
+      <FlatList
+        data={data}
+        renderItem={({item}) => (
+          <TouchableOpacity
+            onPress={onPressImage}
+            style={{backgroundColor: '#EEEDED', borderRadius: 30}}>
+            <View
               style={{
-                height: 100,
-                width: 100,
-                marginHorizontal: 10,
-                borderRadius: 20,
-                top: 15
-              }}
-              onPressImage={onPress}
-            /><Text style={{
-              paddingLeft: 130,
-              top: -75,
-              fontSize: 20,
-              color: '#000',
-              fontWeight: '700'
-            }}>{item.name}</Text>
-            <Text style={{
-              paddingLeft: 130,
-              top: -69,
-              fontSize: 15,
-              color: '#948885'
-            }} numberOfLines={1}>{item.Description}</Text>
-            <Text style={{
-            paddingLeft: 130,
-            top: -59,
-            fontSize: 20,
-            color: 'blue',
-            fontWeight: '900'}}>{item.Price}</Text>
-          </View>}
-        />
-      </TouchableOpacity>
+                height: 150,
+                width: 350,
+                borderRadius: 35,
+                backgroundColor: '#fff',
+                marginHorizontal: 25,
+                marginVertical: 20,
+                elevation: 10,
+              }}>
+              <Image
+                source={item.image}
+                style={{
+                  height: 100,
+                  width: 100,
+                  marginHorizontal: 10,
+                  borderRadius: 20,
+                  top: 15,
+                }}
+                onPressImage={onPress}
+              />
+              <Text
+                style={{
+                  paddingLeft: 130,
+                  top: -75,
+                  fontSize: 20,
+                  color: '#000',
+                  fontWeight: '700',
+                }}>
+                {item.name}
+              </Text>
+              <Text
+                style={{
+                  paddingLeft: 130,
+                  top: -69,
+                  fontSize: 15,
+                  color: '#948885',
+                }}
+                numberOfLines={1}>
+                {item.Description}
+              </Text>
+              <Text
+                style={{
+                  paddingLeft: 130,
+                  top: -59,
+                  fontSize: 20,
+                  color: 'blue',
+                  fontWeight: '900',
+                }}>
+                {item.Price}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
     </ScrollView>
   );
 }
